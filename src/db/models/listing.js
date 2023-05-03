@@ -1,33 +1,30 @@
 const knex = require('../knex');
 
 class Listing {
-    constructor (id, user_id, location, availability, img) {
+    constructor (id, user_id, location, availability, image) {
         this.id = id;
         this.user_id = user_id;
         this.location = location;
         this.availability = availability;
-        this.img;      
+        this.image = image;      
     }
     static async list() {
         try {
-          const query = 'SELECT * FROM listing';
-          const { rows } = await knex.raw(query);
-          return rows.map((listing) => new Listing(listing))
+            const query = 'SELECT * FROM listings';
+            const { rows } = await knex.raw(query);
+            return rows.map((listing) => new Listing(listing))
         } catch (err) {
-          console.error(err);
+            console.error(err);
           return null;
         }
     }
 
     
-    static async create(username, password) {
+    static async create(user_id, location, availability, image) {
       try {
-        const passwordHash = await authUtils.hashPassword(password);
-
-        const query = `INSERT INTO users (username, password_hash)
-          VALUES (?, ?) RETURNING *`;
-        const { rows: [user] } = await knex.raw(query, [username, passwordHash]);
-        return new User(user);
+        const query = `INSERT INTO listings (user_id, location, availability,images) VALUES (?, ?, ?, ?) RETURNING *`;
+        const { rows: [listing] } = await knex.raw(query, [user_id, location, availability, image]);
+        return new Listing(listing);
       } catch (err) {
         console.error(err);
         return null;

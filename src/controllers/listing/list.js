@@ -4,4 +4,4 @@ const allListings = async (req, res) => {
     res.send(data)
 }
 
-module.exports = allListings;
+module.exports = allListings
