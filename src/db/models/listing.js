@@ -31,23 +31,23 @@ class Listing {
       }
     }
 
-    static async updateListing(listing_id, location, img, price) {
+    static async updateListing(listing_id, location, images, availability, user_id) {
       try {
-        const query = `UPDATE listings SET location = ?, price = ?, img = ? WHERE id = ? AND user_id = ? RETURNING *;` 
-        const res = await knex.raw(query, [location, img, price, listing_id]);
+        const query = `UPDATE listings SET location = ?, images = ?, availability = ? WHERE id = ? AND user_id = ? RETURNING *;` 
+        const res = await knex.raw(query, [location, images, availability, listing_id, user_id]);
         return res.rows[0];
-      } catch {
+      } catch (err) {
         console.error(err);
         return null;
       }
     }
-
-    static async delete(id) {
+    
+    static async deleteListing(listing_id, user_id) {
       try {
-        const query = `DELETE FROM listings WHERE id = ? RETURNING *;`
-        const res = await knex.raw(query, [id])
+        const query = `DELETE FROM listings WHERE id = ? AND user_id = ?;`
+        await knex.raw(query, [listing_id, user_id]);
         return res.rows[0];
-      } catch {
+      } catch (err) {
         console.error(err);
         return null;
       }
