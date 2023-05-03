@@ -30,6 +30,28 @@ class Listing {
         return null;
       }
     }
+
+    static async updateListing(listing_id, location, img, price) {
+      try {
+        const query = `UPDATE listings SET location = ?, price = ?, img = ? WHERE id = ? AND user_id = ? RETURNING *;` 
+        const res = await knex.raw(query, [location, img, price, listing_id]);
+        return res.rows[0];
+      } catch {
+        console.error(err);
+        return null;
+      }
+    }
+
+    static async delete(id) {
+      try {
+        const query = `DELETE FROM listings WHERE id = ? RETURNING *;`
+        const res = await knex.raw(query, [id])
+        return res.rows[0];
+      } catch {
+        console.error(err);
+        return null;
+      }
+    }
 }
 
 module.exports = Listing
