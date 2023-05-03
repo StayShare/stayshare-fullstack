@@ -1,5 +1,6 @@
 const express = require('express');
 const userController = require('./controllers/user');
+const listController = require('./controllers/listing')
 const addModels = require('./middleware/add-models');
 const checkAuthentication = require('./middleware/check-authentication');
 
@@ -32,5 +33,10 @@ Router.patch('/users/:id', checkAuthentication, userController.update);
 
 // Delete
 Router.delete('/users/logout', userController.logout);
+
+// Listings Routes
+Router.get('/listings', listController.list)
+Router.post('/listings', listController.create);
+
 
 module.exports = Router;
