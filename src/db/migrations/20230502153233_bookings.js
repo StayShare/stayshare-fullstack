@@ -7,8 +7,8 @@ exports.up = (knex) => {
         table.increments('id').primary();
         table.integer('user_id').references('id').inTable('users')
         table.integer('listing_id').references('id').inTable('listings');
-        table.date('start_date').notNullable();
-        table.date('end_date').notNullable();
+        table.date('start_date')
+        table.date('end_date')
     });
 };
 
