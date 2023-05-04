@@ -25,7 +25,7 @@ class User {
       return null;
     }
   }
-
+ 
   static async find(id) {
     try {
       const query = 'SELECT * FROM users WHERE id = ?';
@@ -80,7 +80,7 @@ class User {
       return updatedUser ? new User(updatedUser) : null;
     } catch (err) {
       console.error(err);
-      return null;
+      return null; 
     }
   };
 

@@ -1,10 +1,11 @@
 const createListing = async (req, res) => {
     const {
       db: { Listing },
-      body: { location, userID, img, price },
+      body: { user_id, price, location, availability, images },
     } = req;
+    console.log(req.body)
   
-    const listing = await Listing.create(location, userID, img, price);
+    const listing = await Listing.create(user_id, price, location, availability, images);
 
     res.send(listing);
   };

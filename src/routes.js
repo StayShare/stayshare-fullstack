@@ -16,27 +16,29 @@ Router.get('/cookieCounter', (req, res) => {
 });
 
 // Create
-Router.post('/api/users', userController.create);
-Router.post('/api/users/login', userController.login);
+Router.post('/users', userController.create);
+Router.post('/users/login', userController.login);
 
 // Read
 Router.get('/users', userController.list);
 Router.get('/users/:id', userController.show);
-Router.get('/api/me', userController.showMe);
+Router.get('/me', userController.showMe);
 // checkAuthentication middleware is applied to only to this route (and /logged-in-secret)
-Router.get('/api/logged-in-secret', checkAuthentication, (req, res) => {
+Router.get('/logged-in-secret', checkAuthentication, (req, res) => {
   res.send({ msg: 'The secret is: there is no secret.' });
 });
 
 // Update
-Router.patch('/api/users/:id', checkAuthentication, userController.update);
+Router.patch('/users/:id', checkAuthentication, userController.update);
 
 // Delete
-Router.delete('/api/users/logout', userController.logout);
+Router.delete('/users/logout', userController.logout);
 
 // Listings Routes
 Router.get('/listings', listController.list)
 Router.post('/listings', listController.create);
+Router.patch('/listings/:id', listController.update);
+Router.delete('/listings/:id', listController.destroy);
 
 
 module.exports = Router;

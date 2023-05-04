@@ -4,7 +4,7 @@ const path = require('path');
 const handleCookieSessions = require('./middleware/handle-cookie-sessions');
 const logRoutes = require('./middleware/log-routes');
 const routes = require('./routes');
-const postRoutes = require('./postRoutes');
+// const postRoutes = require('./postRoutes');
 
 const app = express();
 
@@ -13,7 +13,7 @@ app.use(logRoutes);
 app.use(express.json());
 app.use(express.static(path.join(__dirname, '..', 'public')));
 
-app.use(routes);
-//app.use(postRoutes)
+app.use('/api',routes);
+// app.use(postRoutes);
 
 module.exports = app;
