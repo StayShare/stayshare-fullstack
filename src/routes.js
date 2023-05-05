@@ -1,6 +1,7 @@
 const express = require('express');
 const userController = require('./controllers/user');
-const listController = require('./controllers/listing')
+const listController = require('./controllers/listing');
+const bookController = require('./controllers/booking');
 const addModels = require('./middleware/add-models');
 const checkAuthentication = require('./middleware/check-authentication');
 
@@ -35,10 +36,14 @@ Router.patch('/users/:id', checkAuthentication, userController.update);
 Router.delete('/users/logout', userController.logout);
 
 // Listings Routes
-Router.get('/listings', listController.list)
+Router.get('/listings', listController.list);
 Router.post('/listings', listController.create);
 Router.patch('/listings/:id', listController.update);
 Router.delete('/listings/:id', listController.destroy);
 
+// Bookings Routes 
+Router.get('/booking', listController.list);
+Router.post('/booking', listController.create);
+Router.delete('/booking/:id', listController.destroy);
 
 module.exports = Router;
