@@ -7,7 +7,7 @@ class Listing {
         this.price = price;
         this.location = location;
         this.availability = availability;
-        this.image = images;      
+        this.images = images;      
     }
     static async list() {
         try {
