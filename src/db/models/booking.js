@@ -10,7 +10,7 @@ class Booking {
     }
     static async list() {
         try {
-            const query = 'SELECT * FROM booking';
+            const query = 'SELECT * FROM bookings';
             const { rows } = await knex.raw(query);
             return rows.map((booking) => new Booking(booking))
         } catch (err) {
@@ -45,7 +45,7 @@ class Booking {
     
     static async delete(id) {
       try {
-        const query = `DELETE FROM bookings WHERE id = ? RETURNING *;`
+        const query = `DELETE FROM bookings WHERE id = ? RETURNING *`;
         await knex.raw(query, [id]);
         
       } catch (err) {

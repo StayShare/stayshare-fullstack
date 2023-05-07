@@ -42,8 +42,8 @@ Router.patch('/listings/:id', listController.update);
 Router.delete('/listings/:id', listController.destroy);
 
 // Bookings Routes 
-Router.get('/booking', listController.list);
-Router.post('/booking', listController.create);
-Router.delete('/booking/:id', listController.destroy);
+Router.get('/booking', bookController.list);
+Router.post('/booking', bookController.create);
+Router.delete('/booking/:id', bookController.destroy);
 
 module.exports = Router;
