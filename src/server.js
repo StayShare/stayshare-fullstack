@@ -14,6 +14,7 @@ app.use(express.json());
 app.use(express.static(path.join(__dirname, '..', 'public')));
 
 app.use('/api',routes);
+
 // app.use(postRoutes);
 
 module.exports = app;

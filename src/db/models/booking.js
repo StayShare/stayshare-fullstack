@@ -20,11 +20,11 @@ class Booking {
     }
 
     
-    static async create(id, user_id, listing_id, start_date, end_date) {
+    static async create(user_id, listing_id, start_date, end_date) {
       try {
-        console.log({id, user_id, listing_id, start_date, end_date})
-        const query = `INSERT INTO bookings (id, user_id, listing_id, start_date, end_date) VALUES (?, ?, ?, ?, ?) RETURNING *`;
-        const { rows: [booking] } = await knex.raw(query, [id, user_id, listing_id, start_date, end_date]);
+        console.log({user_id, listing_id, start_date, end_date})
+        const query = `INSERT INTO bookings (user_id, listing_id, start_date, end_date) VALUES (?, ?, ?, ?) RETURNING *`;
+        const { rows: [booking] } = await knex.raw(query, [user_id, listing_id, start_date, end_date]);
         return new Booking(booking);
       } catch (err) {
         console.error(err);
