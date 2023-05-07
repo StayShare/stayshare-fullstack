@@ -6,9 +6,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./styles/style.css">
   <script type="module" src="./scripts/login.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@900&family=Poppins:wght@400;500&display=swap" rel="stylesheet">
   <title>Log in</title>
 </head>
-<body>
+<!-- <body>
   <nav id="main-nav"></nav>
   <main>
     <h1 id="log-in">Log In</h1>
@@ -21,5 +24,32 @@
       <button type="submit">Log in!</button>
     </form>
   </main>
+</body> -->
+
+<body>
+  <div class="left">
+      <div class="navbar">
+           <h3 class="logo">StayShare</h3>
+            <div class="nav">
+              <a class="nav-item" href="">Book</a>
+              <a class="nav-item" href="">Learn</a>
+              <a class="nav-item" href="create.html">Register</a>
+            </div>
+      </div>
+      <h1 id="headline">Looking for the perfect place to stay on your next trip?</h1>
+      <h5 id="subtitle">StayShare is a web-based platform that allows users to create and manage listings for vacation rentals, homestays, and lodging.</h5>
+      <button id="home-book" type ='button'>Book</button>
+  </div>
+  <div class="right">
+      <div class="form-wrapper">
+          <h1 id="sign-in">Sign In</h1>
+          <form id="sign-in-form" aria-describedby="log-in">
+              <input class="user sign-in-input" type="text" name="username" id="username" placeholder="Username" autocomplete="username" required/>
+              <input class="pass sign-in-input" type="password" name="password" id="password" placeholder="Password" autocomplete="password" required />
+              <button id="sign-in-btn" type ='submit'>Sign In</button>
+          </form>
+          <h6>Don't have an account? <a href="create.html">Create Account</a></h6>
+      </div>
+  </div>
 </body>
 </html>

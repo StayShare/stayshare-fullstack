@@ -1,0 +1,170 @@
+:root {
+    --clr-dark: #000000;
+    --clr-orange: #E23D1A;
+    --clr-grey: #2A2D3E;
+    --clr-light: #FFFFFF;
+  
+    --ff-primary: 'Poppins', sans-serif;
+    --ff-secondary: 'Merriweather', serif;
+    
+    --fw-regular: 400;
+    --fw-medium: 500;
+    --fw-black: 900; 
+  
+    --fs-xxs: 16px;
+    --fs-xs: 20px;
+    --fs-s: 24px;
+    --fs-m: 32px;
+    --fs-l: 36px;
+    --fs-xl: 80px;
+}
+  
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+  
+/* Remove default margin */
+* {
+    margin: 0;
+    padding: 0;
+    font: inherit;
+}
+  
+/*Removes default text styling on anchor tags*/
+a {
+    text-decoration: none;
+    color: var(--clr-orange);
+    font-family: var(--ff-primary);
+}
+
+/*Custom styles for H tags*/
+h1 {
+    font-family: var(--ff-primary);
+    font-size: var(--fs-xl);
+    font-weight: var(--fw-medium);
+}
+
+h2 {
+    font-family: var(--ff-primary);
+    font-size: var(--fs-l);
+    font-weight: var(--fw-medium);
+}
+
+h3 {
+    font-family: var(--ff-secondary);
+    font-size: var(--fs-m);
+}
+
+h4 {
+    font-family: var(--ff-primary);
+    font-size: var(--fs-s);
+    font-weight: var(--fw-regular);
+}
+
+h5 {
+    font-family: var(--ff-primary);
+    font-size: var(--fs-xs);
+    font-weight: var(--fw-regular);
+}
+
+h6 {
+    font-family: var(--ff-primary);
+    font-size: var(--fs-xxs);
+    font-weight: var(--fw-regular);
+}
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+    list-style: none;
+}
+  
+/* Set core root defaults */
+html:focus-within {
+    scroll-behavior: smooth;
+}
+  
+html,
+body {
+    height: 100%;
+    font-family: var(ff-primary);
+}
+  
+/* Set core body defaults */
+body {
+    text-rendering: optimizeSpeed;
+    padding: 75px 100px 100px 100px;
+}
+  
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+     text-decoration-skip-ink: auto;
+}
+  
+/* Make images easier to work with */
+img,
+svg,
+picture {
+    max-width: 100%;
+    display: block;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--clr-dark);
+    color: var(--clr-light);
+}
+
+.form-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    background-color: rgba(42, 45, 62, 0.2);
+    padding: 80px;
+    border-radius: 50px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+input {
+    width: 418px;
+    height: 55px;
+    background: none;
+    color: var(--clr-orange);
+    border: 2px solid var(--clr-orange);
+    outline: none;
+    border-top: 0;
+    border-right: 0;
+    border-left: 0;
+    padding-left: 15px;
+    font-family: var(--ff-primary);
+    font-size: var(--fs-xxs);
+}
+
+button {
+    width: 100%;
+    height: 55px;
+    color: var(--clr-orange);
+    background: none;
+    border: 2px solid var(--clr-orange) ;
+    border-radius: 50px;
+    outline: none;
+    cursor: pointer;
+    font-family: var(--ff-primary);
+    font-size: var(--fs-s);
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+
+button:hover {
+    background-color: var(--clr-orange);
+    color: var(--clr-light)
+}

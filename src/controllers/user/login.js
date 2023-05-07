@@ -5,7 +5,10 @@ const loginUser = async (req, res) => {
     body: { username, password },
   } = req;
 
+  console.log(username, password)
+  
   const user = await User.findByUsername(username);
+  console.log(user)
   if (!user) return res.sendStatus(404);
 
   const isPasswordValid = await user.isValidPassword(password);
