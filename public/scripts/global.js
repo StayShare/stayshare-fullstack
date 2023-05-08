@@ -28,7 +28,7 @@ const signupAndLoginHandler = async (url, form) => {
     form.reset();
     return alert('Something went wrong');
   }
-  window.location.assign('/user.html');
+  window.location.assign('/home.html');
 };
 
 // READ USER
@@ -54,7 +54,7 @@ const updateUsernameHandler = async (form) => {
 const logOutHandler = async () => {
   const [_response, err] = await handleFetch('/api/users/logout', { method: 'DELETE' });
   if (err) return alert('Something went wrong');
-  window.location.assign('/');
+  window.location.assign('/login.html');
 };
 
 // Nav Helper
