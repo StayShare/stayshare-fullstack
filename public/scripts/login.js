@@ -6,6 +6,14 @@ import {
   handleFetch
 } from './global.js';
 
+const redirectToLogin = () => window.location.assign("/login.html");
+
+// const main = async () => {
+//   const user = await fetchLoggedInUser();
+//   if (!user) return redirectToLogin();
+//   setNav(!!user);
+// }
+
 const main = async () => {
   const user = await fetchLoggedInUser();
   if (user) return window.location.assign('/home.html');

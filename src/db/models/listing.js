@@ -74,8 +74,8 @@ class Listing {
       try {
         await knex.raw(`DELETE FROM bookings WHERE listing_id = ?`,[ id ])
         const query = `DELETE FROM listings WHERE id = ? RETURNING *;`
-        await knex.raw(query, [id]);
-        
+        const res = await knex.raw(query, [id]); 
+        return res;
       } catch (err) {
         console.error(err);
         return null;

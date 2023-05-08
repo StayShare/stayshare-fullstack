@@ -6,6 +6,9 @@ import {
 } from './global.js';
 
 const main = async () => {
+  const redirectToPage = () => window.location.assign("/login.html");
+  redirectToPage()
+
   const user = await fetchLoggedInUser();
   setNav(!!user);
 

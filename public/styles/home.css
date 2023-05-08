@@ -160,7 +160,7 @@ input {
 }
 
 input[type="date"]::-webkit-calendar-picker-indicator {
-    background: url(/unit-7/StayShare/public/styles/Calender_Icon.svg) no-repeat;
+    background: url(./Calender_Icon.svg) no-repeat;
 }
 
 button {
@@ -203,7 +203,7 @@ button:hover {
 .img {
     width: 400px;
     height: 361px;
-    background-image: url(https://images.unsplash.com/photo-1601918774946-25832a4be0d6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1169&q=80);
+    /* background-image: url(https://images.unsplash.com/photo-1601918774946-25832a4be0d6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1169&q=80); */
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
